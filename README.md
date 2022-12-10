@@ -76,4 +76,38 @@ Outras informações serão enviadas no e-mail juntamente com o teste.
 `REFERENCES pessoa (id) MATCH SIMPLE`<br/>
 `ON UPDATE NO ACTION ON DELETE NO ACTION);`<br/>
 
+**UPDATE:**
+
+Alterado CREATE TABLE membros para o script abaixo:
+
+`CREATE TABLE membros`<br/>
+`(idmembro bigserial not null,`<br/>
+`idprojeto bigint NOT NULL,`<br/>
+`idpessoa bigint NOT NULL,`<br/>
+`CONSTRAINT pk_membros PRIMARY KEY (idmembro),`<br/>
+`CONSTRAINT fk_projeto FOREIGN KEY (idprojeto)`<br/>
+`REFERENCES projeto (id) MATCH SIMPLE`<br/>
+`ON UPDATE NO ACTION ON DELETE NO ACTION,`<br/>
+`CONSTRAINT fk_pessoa FOREIGN KEY (idpessoa)`<br/>
+`REFERENCES pessoa (id) MATCH SIMPLE`<br/>
+`ON UPDATE NO ACTION ON DELETE NO ACTION);`<br/>
+
+***WebService para cadastro de pessoas:***
+
+Criada API REST para o cadastro de pessoas.
+
+Path: `/api/person/create`
+
+Método: POST
+
+Exemplo: `http://localhost:8080/api/person/create`
+
+Body Exemplo: 
+
+{
+	"name": "Person 1",
+	"employee": true
+}
+
+
 https://raw.githubusercontent.com/acelant/testeBiblioteca/master/TesteProjetos.png
