@@ -78,7 +78,7 @@
         </form:label>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 10px">
-        <input type="submit" value="submit" class="btn btn-primary btn"/>
+        <input type="submit" value="Create" class="btn btn-primary btn"/>
     </div>
 </form:form>
 </body>
