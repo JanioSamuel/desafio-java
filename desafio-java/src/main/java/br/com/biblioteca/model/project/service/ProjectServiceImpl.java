@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProjectServiceImpl implements ProjectService {
 
-	private static final List<Status> PROHIBITED_TO_DELETE = Arrays.asList(Status.ANALYSIS_STARTED, Status.RUNNING, Status.CANCELED);
+	private static final List<Status> PROHIBITED_TO_DELETE = Arrays.asList(Status.ANALYSIS_STARTED, Status.RUNNING, Status.FINISHED);
 	private final ProjectRepository projectRepository;
 	private final MemberRepository memberRepository;
 

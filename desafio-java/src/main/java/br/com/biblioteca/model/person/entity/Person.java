@@ -20,16 +20,16 @@ public class Person {
 
 	@NotNull
 	@Column(name = "nome")
-	private String name;//nome character varying(100) NOT NULL,
+	private String name;
 
 	@Column(name = "datanascimento")
-	private LocalDate birthDate;//datanascimento date,
+	private LocalDate birthDate;
 
 	@Column(name = "cpf")
-	private String taxpayerId; //cpf character varying(14),
+	private String taxpayerId;
 
 	@Column(name = "funcionario")
-	private Boolean isEmployee;//funcionario boolean,
+	private Boolean isEmployee;
 
 	public long getId() {
 		return id;

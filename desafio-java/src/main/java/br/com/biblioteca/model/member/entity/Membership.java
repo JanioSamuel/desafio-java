@@ -25,12 +25,12 @@ public class Membership {
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "idprojeto", referencedColumnName = "id")
-	private Project project;//idprojeto bigserial NOT NULL,
+	private Project project;
 
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "idpessoa", referencedColumnName = "id")
-	private Person person;//idpessoa bigint NOT NULL,
+	private Person person;
 
 	public long getId() {
 		return id;

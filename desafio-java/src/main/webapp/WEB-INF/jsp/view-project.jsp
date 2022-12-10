@@ -63,14 +63,12 @@
         <thead>
         <tr>
             <th scope="col">Name</th>
-<%--            <th scope="col">Action</th>--%>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${members}" var="member">
             <tr>
                 <td scope="row">${member.person.name}</td>
-<%--                <td scope="row"><a href="/member/delete/${project.id}">Delete</a></td>--%>
             </tr>
         </c:forEach>
         </tbody>

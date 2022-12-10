@@ -11,7 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-    <jsp:include page="index.jsp"/>
-    <div>ID NOT FOUND</div>
+<jsp:include page="index.jsp" />
+<c:if test="${message != null}">
+    <div>${message}</div>
+</c:if>
 </body>
 </html>

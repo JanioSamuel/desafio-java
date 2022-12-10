@@ -66,12 +66,12 @@ class ProjectServiceTest {
 	void verifyCreateNotEmployee() {
 		final ProjectDTO input = new ProjectDTO();
 		final Project expected = new Project();
-		final PersonDTO manager = new PersonDTO();
+		final Person manager = new Person();
 		expected.setName("Junit");
 		manager.setId(99);
 		manager.setEmployee(false);
 		input.setName("Junit");
-//		input.setManager(manager);
+		input.setManager(manager);
 		assertThrows(NotEmployeeException.class, () -> this.projectService.create(input));
 	}
 
@@ -144,12 +144,12 @@ class ProjectServiceTest {
 		final long id = 1;
 		final Project project = new Project();
 		final ProjectDTO projectDTO = new ProjectDTO();
-		final PersonDTO manager = new PersonDTO();
+		final Person manager = new Person();
 		project.setId(90);
 		projectDTO.setId(1);
 		manager.setId(99);
 		manager.setEmployee(true);
-//		projectDTO.setManager(manager);
+		projectDTO.setManager(manager);
 		Mockito.when(this.projectRepository.findById(id)).thenReturn(Optional.of(project));
 		assertThrows(DifferentIdException.class, () -> this.projectService.update(id, projectDTO));
 	}
@@ -159,12 +159,12 @@ class ProjectServiceTest {
 		final long id = 1;
 		final Project project = new Project();
 		final ProjectDTO projectDTO = new ProjectDTO();
-		final PersonDTO manager = new PersonDTO();
+		final Person manager = new Person();
 		project.setId(90);
 		projectDTO.setId(1);
 		manager.setId(99);
 		manager.setEmployee(true);
-//		projectDTO.setManager(manager);
+		projectDTO.setManager(manager);
 		Mockito.when(this.projectRepository.findById(id)).thenReturn(Optional.empty());
 		assertThrows(ProjectNotFoundException.class, () -> this.projectService.update(id, projectDTO));
 	}

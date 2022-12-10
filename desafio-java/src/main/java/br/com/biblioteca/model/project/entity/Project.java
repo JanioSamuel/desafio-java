@@ -29,35 +29,35 @@ public class Project {
 
 	@NotNull
 	@Column(name = "nome")
-	private String name;// VARCHAR(200) NOT NULL,
+	private String name;
 
 	@Column(name = "data_inicio")
-	private LocalDate startDate;//data_inicio DATE ,
+	private LocalDate startDate;
 
 	@Column(name = "data_previsao_fim")
-	private LocalDate expectedEndDate;//data_previsao_fim DATE ,
+	private LocalDate expectedEndDate;
 
 	@Column(name = "data_fim")
-	private LocalDate endDate;//data_fim DATE ,
+	private LocalDate endDate;
 
 	@Column(name = "descricao")
-	private String description;//descricao VARCHAR(5000) ,
+	private String description;
 
 	@Column(name = "status")
 	@Convert(converter = EnumStatusConverter.class)
-	private Status status;// VARCHAR(45) ,
+	private Status status;
 
 	@Column(name = "orcamento")
-	private float budget;//orcamento FLOAT ,
+	private float budget;
 
 	@Column(name = "risco")
 	@Convert(converter = EnumRiskRatingConverter.class)
-	private RiskRating risk;// VARCHAR(45)
+	private RiskRating risk;
 
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "idgerente", referencedColumnName = "id")
-	private Person manager;//idgerente bigserial NOT NULL,
+	private Person manager;
 
 	public long getId() {
 		return id;
